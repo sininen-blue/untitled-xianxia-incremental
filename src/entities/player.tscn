@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cyexbi5aspyk0"]
+
+[ext_resource type="Script" uid="uid://dok3nngi8jjsn" path="res://src/entities/player.gd" id="1_2lfla"]
+[ext_resource type="PackedScene" uid="uid://dsof8a5dnei8i" path="res://src/resources/Realms/mortal.tscn" id="2_3glep"]
+
+[node name="Player" type="Node" unique_id=40605644 node_paths=PackedStringArray("current_realm")]
+script = ExtResource("1_2lfla")
+current_realm = NodePath("Mortal")
+metadata/_custom_type_script = "uid://dok3nngi8jjsn"
+
+[node name="Mortal" parent="." unique_id=1960594628 node_paths=PackedStringArray("player") instance=ExtResource("2_3glep")]
+active = true
+player = NodePath("..")

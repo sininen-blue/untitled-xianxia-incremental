@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bvfo4ohp5l1u8"]
+
+[node name="GlobalTimer" type="Timer" unique_id=171336497]
+autostart = true

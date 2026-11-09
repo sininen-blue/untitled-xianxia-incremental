@@ -8,4 +8,5 @@ extends Label
 
 
 func _process(_delta: float) -> void:
+	return
 	self.text = prefix + ": " + str(target.get(property))

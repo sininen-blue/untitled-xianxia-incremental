@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://46el7k5fqy4f"]
 
 [ext_resource type="Script" uid="uid://dk6lqmuoknyio" path="res://src/core/main/main.gd" id="1_6t2ow"]
-[ext_resource type="Script" uid="uid://d2ijygxxjyy2x" path="res://src/ui/stat_label.gd" id="2_eijcj"]
-
-[sub_resource type="Curve" id="Curve_eijcj"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+[ext_resource type="PackedScene" uid="uid://cyexbi5aspyk0" path="res://src/entities/player.tscn" id="2_eijcj"]
 
 [node name="Main" type="Control" unique_id=471989912]
 layout_mode = 3
@@ -15,33 +11,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6t2ow")
-breakthrough_curve = SubResource("Curve_eijcj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1150369206]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Realm" type="Label" parent="VBoxContainer" unique_id=903460476 node_paths=PackedStringArray("target")]
-layout_mode = 2
-script = ExtResource("2_eijcj")
-target = NodePath("../..")
-prefix = "realm"
-property = "current_realm"
-metadata/_custom_type_script = "uid://d2ijygxxjyy2x"
-
-[node name="Stage" type="Label" parent="VBoxContainer" unique_id=607851047 node_paths=PackedStringArray("target")]
-layout_mode = 2
-script = ExtResource("2_eijcj")
-target = NodePath("../..")
-prefix = "stage"
-property = "current_stage"
-metadata/_custom_type_script = "uid://d2ijygxxjyy2x"
-
-[node name="Qi" type="Label" parent="VBoxContainer" unique_id=355365949 node_paths=PackedStringArray("target")]
-layout_mode = 2
-script = ExtResource("2_eijcj")
-target = NodePath("../..")
-prefix = "qi"
-property = "qi"
-metadata/_custom_type_script = "uid://d2ijygxxjyy2x"
+[node name="Player" parent="." unique_id=40605644 instance=ExtResource("2_eijcj")]
