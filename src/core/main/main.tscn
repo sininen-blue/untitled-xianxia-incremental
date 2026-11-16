@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://46el7k5fqy4f"]
 
 [ext_resource type="Script" uid="uid://vnpvprk517dg" path="res://src/core/main/main.gd" id="1_6t2ow"]
+[ext_resource type="Script" uid="uid://dnf55vf4mlqf8" path="res://src/resources/progression.gd" id="2_eijcj"]
+
+[sub_resource type="Resource" id="Resource_6t2ow"]
+script = ExtResource("2_eijcj")
+metadata/_custom_type_script = "uid://dnf55vf4mlqf8"
 
 [node name="Main" type="Node" unique_id=1573922894]
 script = ExtResource("1_6t2ow")
+progression = SubResource("Resource_6t2ow")
 
 [node name="MainTimer" type="Timer" parent="." unique_id=1120605350]
 autostart = true

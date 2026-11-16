@@ -3,10 +3,9 @@ extends Resource
 
 
 var title: String
-var stages: Array[Stage] = []
+var stages: Array[Stage]
 
 
-func _init(_title: String = "", _stages: Array = []) -> void:
+func _init(_title: String, _stages: Array[Stage]) -> void:
 	title = _title
-	stages.assign(_stages)
-
+	stages = _stages
