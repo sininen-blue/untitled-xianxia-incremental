@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dpr3eafsrn75o"]
 
+[ext_resource type="Theme" uid="uid://l4mmehyo7jxy" path="res://src/resources/themes/main.tres" id="1_tmtft"]
 [ext_resource type="Script" uid="uid://btr8barxd2ra6" path="res://src/ui/main_ui/main_ui.gd" id="1_yhysy"]
+[ext_resource type="PackedScene" uid="uid://lr4aohubi8s3" path="res://src/ui/technique_card/technique_card.tscn" id="2_jhtxo"]
 
 [node name="MainUI" type="Control" unique_id=1625819330]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_tmtft")
 script = ExtResource("1_yhysy")
 metadata/_edit_lock_ = true
 
@@ -34,23 +37,36 @@ size_flags_horizontal = 3
 [node name="StageLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=1001363483]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Stage: "
 
 [node name="RealmLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=1043749135]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Realm"
 
 [node name="QiLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=1795059035]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Qi: "
 
 [node name="MeditationGainLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=520145019]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Meditation Gain: "
 
-[node name="Techniques" type="VBoxContainer" parent="MarginContainer/Main" unique_id=161377309]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Main" unique_id=1107817299]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="MarginContainer/Main/Techniques" unique_id=1047500064]
+[node name="Techniques" type="VBoxContainer" parent="MarginContainer/Main/ScrollContainer" unique_id=161377309]
+unique_name_in_owner = true
 layout_mode = 2
-text = "First stage "
+size_flags_horizontal = 3
+
+[node name="TechniqueCard" parent="MarginContainer/Main/ScrollContainer/Techniques" unique_id=1899685124 instance=ExtResource("2_jhtxo")]
+layout_mode = 2
+
+[node name="Shop" type="VBoxContainer" parent="MarginContainer/Main" unique_id=1760074264]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
