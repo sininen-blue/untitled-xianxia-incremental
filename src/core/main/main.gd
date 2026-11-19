@@ -33,8 +33,12 @@ func _on_main_timer_timeout() -> void:
 	var current_stage: Stage = current_realm.stages[current_stage_index]
 
 	if qi > current_stage.cap:
-		var over_percent: float = qi - float(current_stage.cap) / float(current_stage.cap)
-		qi -= _get_qi_deduction(over_percent, 30)
+		var over_percent: float = (qi - float(current_stage.cap)) / float(current_stage.cap)
+		qi -= _get_qi_deduction(over_percent, .30)
+
+
+		if qi > current_stage.cap * 1.30:
+			current_stage_index += 1
 
 
 func _get_meditation_gain() -> int:
@@ -54,3 +58,11 @@ func _get_meditation_gain() -> int:
 
 func _get_qi_deduction(over_percent: float, max_rate: float) -> int:
 	return roundi(max_rate * (over_percent / 0.3)**deduction_scaling)
+
+
+func get_current_realm() -> Realm:
+	return progression.realms[current_realm_index]
+
+
+func get_current_stage() -> Stage:
+	return get_current_realm().stages[current_stage_index]

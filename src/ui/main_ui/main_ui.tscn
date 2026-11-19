@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dpr3eafsrn75o"]
+
+[ext_resource type="Script" uid="uid://btr8barxd2ra6" path="res://src/ui/main_ui/main_ui.gd" id="1_yhysy"]
+
+[node name="MainUI" type="Control" unique_id=1625819330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yhysy")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1193748452]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 42
+theme_override_constants/margin_right = 42
+theme_override_constants/margin_bottom = 42
+
+[node name="Main" type="HBoxContainer" parent="MarginContainer" unique_id=958935868]
+layout_mode = 2
+
+[node name="Stats" type="VBoxContainer" parent="MarginContainer/Main" unique_id=1720714528]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StageLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=1001363483]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RealmLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=1043749135]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QiLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=1795059035]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MeditationGainLabel" type="Label" parent="MarginContainer/Main/Stats" unique_id=520145019]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Techniques" type="VBoxContainer" parent="MarginContainer/Main" unique_id=161377309]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="MarginContainer/Main/Techniques" unique_id=1047500064]
+layout_mode = 2
+text = "First stage "
